@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import AmChart from './Components/amChart';
+import Chartjs from './Components/chartjs';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <AmChart/>
+        <Chartjs/>
       </div>
     );
   }
