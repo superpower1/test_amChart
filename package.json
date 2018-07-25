@@ -7,6 +7,7 @@
     "amcharts3": "^3.21.13",
     "chart.js": "^2.7.2",
     "chartjs-plugin-zoom": "^0.6.3",
+    "md5": "^2.2.1",
     "moment": "^2.22.2",
     "react": "^16.4.1",
     "react-chartjs-2": "^2.7.4",

@@ -5,6 +5,24 @@ import moment from 'moment';
 import 'chartjs-plugin-zoom';
 
 class chartjs extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: generateChartData()
+    }
+  }
+
+  componentDidMount() {
+    console.log(this.refs.linechart.chartInstance);
+    this.refs.linechart.chartInstance.zoom.onZoom = () => {
+      console.log('zoom');
+    }
+  }
+
+  reset = () => {
+    this.refs.linechart.chartInstance.resetZoom();
+  }
+
   render() {
     const tooltipsTitle = (data) => {
       return moment(data[0].xLabel).format('k:mm MMM D, YYYY');
@@ -43,11 +61,12 @@ class chartjs extends Component {
       }
     }
 
-    const line = buildLine(generateChartData());
+    const line = buildLine(this.state.data);
 
     return (
       <div style={{height: '400px'}}>
         <Line data={line}
+          ref="linechart"
           redraw={true}
           options={{
             maintainAspectRatio: false,
@@ -75,11 +94,17 @@ class chartjs extends Component {
             },
             zoom: {
               enabled: true,
-              drag: true,
+              // drag: true,
               mode: 'x'
-            }
+            },
+            pan: {
+              enabled: true,
+              mode: 'x'
+            },
+            onClick: (e)=>{console.log(e);}
           }}
         />
+        <button onClick={this.reset.bind(this)}>reset</button>
       </div>
     );
   }
