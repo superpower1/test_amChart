@@ -5,6 +5,8 @@ import md5 from 'md5';
 
 import AmChart from './Components/amChart';
 import Chartjs from './Components/chartjs';
+import TagsInput from './Components/tagsInput';
+import Intercom from './Components/intercom';
 
 class App extends Component {
   render() {
@@ -15,8 +17,10 @@ class App extends Component {
           <img src={"https://www.gravatar.com/avatar/" + md5('haofu.zhu@sinefa.com') + ".jpg?s=64&d=mp"} alt=""/>
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <AmChart/>
-        <Chartjs/>        
+        {/* <AmChart/> */}
+        {/* <Chartjs/>         */}
+        {/* <TagsInput/> */}
+        <Intercom></Intercom>
       </div>
     );
   }
