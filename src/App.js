@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import md5 from 'md5';
+import {Elements, StripeProvider} from 'react-stripe-elements';
 
 import AmChart from './Components/amChart';
 import Chartjs from './Components/chartjs';
 import TagsInput from './Components/tagsInput';
 import Intercom from './Components/intercom';
+import StripeTest from './Components/StripeTest';
 
 class App extends Component {
   render() {
@@ -20,7 +22,15 @@ class App extends Component {
         {/* <AmChart/> */}
         {/* <Chartjs/>         */}
         {/* <TagsInput/> */}
-        <Intercom></Intercom>
+        {/* <Intercom></Intercom> */}
+        <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
+          <div className="example">
+            <h1>React Stripe Elements Example</h1>
+            <Elements>
+              <StripeTest />
+            </Elements>
+          </div>
+        </StripeProvider>
       </div>
     );
   }
