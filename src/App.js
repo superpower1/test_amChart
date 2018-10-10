@@ -9,6 +9,7 @@ import Chartjs from './Components/chartjs';
 import TagsInput from './Components/tagsInput';
 import Intercom from './Components/intercom';
 import StripeTest from './Components/StripeTest';
+import ReactSelect from './Components/ReactSelect';
 
 class App extends Component {
   render() {
@@ -31,6 +32,7 @@ class App extends Component {
             </Elements>
           </div>
         </StripeProvider>
+        <ReactSelect/>
       </div>
     );
   }
